@@ -1,7 +1,7 @@
 var _ = require('lodash');
 var expect = require('expect.js');
 
-var helpers = require('../../lib/helpers');
+var helpers = require('../lib/helpers');
 
 describe('test helpers.js methods to ensure they\'re working the way we rely on them to', function () {
 
@@ -13,6 +13,7 @@ describe('test helpers.js methods to ensure they\'re working the way we rely on 
   
   var trix = '/*/';
   var sanitizedTrix = '/*';
+  var slashes = [ '6', '7', '22' ];
 
   describe('non-blocking: test removeTrailingSlash', function () {
 
@@ -95,6 +96,35 @@ describe('test helpers.js methods to ensure they\'re working the way we rely on 
 
     });
   
+  });
+
+  describe('non-blocking: test inspectSlashes', function () {
+
+    it('returns slash placement to be ' + slashes, function (done) {
+
+      helpers.inspectSlashes(hasTrailingSlashUri, function (helperResult) {
+
+        expect(helperResult.toString()).to.equal(slashes.toString());
+
+        // bordem... these are all slower..
+        // expect(helperResult[0]).to.equal(slashes[0]);
+        // expect(helperResult[1]).to.equal(slashes[1]);
+        // expect(helperResult[2]).to.equal(slashes[2]);
+        
+        // var ln = slashes.length;
+
+        // for (var i=0;i<ln;++i) {
+
+        //   expect(helperResult[i]).to.equal(slashes[i]);
+
+        // };
+
+        return done();
+
+      });
+
+    });
+
   });
 
   // end of removeTrailingSlash tests
