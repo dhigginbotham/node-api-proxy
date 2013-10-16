@@ -127,6 +127,36 @@ describe('test helpers.js methods to ensure they\'re working the way we rely on 
 
   });
 
+  describe('non-blocking: test motherEffingSlashNuke', function () {
+
+    it('returns slash placement to be ' + slashes, function (done) {
+
+      helpers.motherEffingSlashNuke(hasTrailingSlashUri, function (helperResult) {
+
+
+        console.log(helperResult);
+
+        // bordem... these are all slower..
+        // expect(helperResult[0]).to.equal(slashes[0]);
+        // expect(helperResult[1]).to.equal(slashes[1]);
+        // expect(helperResult[2]).to.equal(slashes[2]);
+        
+        // var ln = slashes.length;
+
+        // for (var i=0;i<ln;++i) {
+
+        //   expect(helperResult[i]).to.equal(slashes[i]);
+
+        // };
+
+        return done();
+
+      });
+
+    });
+
+  });
+
   // end of removeTrailingSlash tests
 
 });
