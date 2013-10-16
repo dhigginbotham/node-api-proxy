@@ -129,25 +129,22 @@ describe('test helpers.js methods to ensure they\'re working the way we rely on 
 
   describe('non-blocking: test motherEffingSlashNuke', function () {
 
-    it('returns slash placement to be ' + slashes, function (done) {
+    it('should leave the string alone', function (done) {
 
-      helpers.motherEffingSlashNuke(hasTrailingSlashUri, function (helperResult) {
+      helpers.motherEffingSlashNuke(noTrailingSlashUri, function (helperResult) {
 
+        expect(helperResult).to.equal(noTrailingSlashUri);
 
-        console.log(helperResult);
+        return done();
 
-        // bordem... these are all slower..
-        // expect(helperResult[0]).to.equal(slashes[0]);
-        // expect(helperResult[1]).to.equal(slashes[1]);
-        // expect(helperResult[2]).to.equal(slashes[2]);
-        
-        // var ln = slashes.length;
+      });
 
-        // for (var i=0;i<ln;++i) {
+    });
+    it('should fix some slashes', function (done) {
 
-        //   expect(helperResult[i]).to.equal(slashes[i]);
+      helpers.motherEffingSlashNuke(trix, function (helperResult) {
 
-        // };
+        expect(helperResult).to.equal('*');
 
         return done();
 
