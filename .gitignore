@@ -1,0 +1,5 @@
+node_modules/*
+examples/node_modules/*
+examples/db/*
+npm-debug.log
+test/db/*

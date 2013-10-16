@@ -1,5 +1,5 @@
 {
-  "name": "node-api-proxy",
+  "name": "napip",
   "version": "0.0.1",
   "description": "api proxy with cache layer n garbarge collection",
   "main": "lib/index.js",
