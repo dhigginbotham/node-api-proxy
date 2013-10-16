@@ -1,0 +1,40 @@
+{
+  "name": "node-api-proxy",
+  "version": "0.0.1",
+  "description": "api proxy with cache layer n garbarge collection",
+  "main": "lib/index.js",
+  "keywords": [
+    "restify",
+    "proxy",
+    "cache",
+    "cors",
+    "nedb"
+  ],
+  "author": {
+    "name": "David Higginbotham",
+    "email": "davehigginbotham@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "request": "latest",
+    "ms": "~0.6.1",
+    "lodash": "~2.2.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "expect.js": "~0.2.0",
+    "express": "latest",
+    "nedb": "~0.8.5"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "mocha test/ -R spec -t 4000"
+  },
+  "bugs": "https://github.com/dhigginbotham/node-api-proxy/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dhigginbotham/node-api-proxy.git"
+  }
+}
